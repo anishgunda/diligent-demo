@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: diligent-demo-api
+    runtime: python
+    plan: starter
+    rootDir: backend
+    buildCommand: pip install .
+    startCommand: python -m app.main
+    healthCheckPath: /health
+    numInstances: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.11
+      - key: REQUIRE_LIVE_CONFIGURATION
+        value: "true"
+      - key: DATABASE_URL
+        sync: false
+      - key: FRONTEND_ORIGINS
+        sync: false
+      - key: CLERK_ISSUER
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: PAYMENT_FINGERPRINT_KEY
+        sync: false
+      - key: LLM_PROVIDER
+        value: grok
+      - key: LLM_MODEL
+        value: grok-4.3
+      - key: ENABLE_DETERMINISTIC_FALLBACK
+        value: "true"

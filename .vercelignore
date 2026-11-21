@@ -1,0 +1,11 @@
+.git
+.next
+.npm-cache
+.tooling
+.vercel
+.env*
+next-env.d.ts
+node_modules
+*.tsbuildinfo
+backend
+render.yaml

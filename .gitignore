@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.npm-cache/
+.tooling/
+.env*
+!.env.example
+next-env.d.ts
+*.tsbuildinfo
+.vercel/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+.ruff_cache/
+*.egg-info/
+.venv/
+
+.vercel
