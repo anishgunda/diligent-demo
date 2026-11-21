@@ -18,6 +18,10 @@ class Storage:
         if not self.url or not self.key:
             raise HTTPException(503, "Private document storage is not configured.")
         key = self.key.get_secret_value()
+        if key.startswith("sb_publishable_"):
+            raise HTTPException(503, "Private document storage requires a server-side Supabase key.")
+        if key.startswith("sb_secret_"):
+            return {"apikey": key}
         return {"apikey": key, "Authorization": "Bearer " + key}
 
     def location(self, org, path, *, authenticated=False):

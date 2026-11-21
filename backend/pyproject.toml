@@ -21,6 +21,7 @@ test = ["pytest>=8,<10", "pytest-asyncio>=1,<2", "ruff>=0.14,<1", "cryptography>
 include = ["app*"]
 
 [tool.pytest.ini_options]
+testpaths = ["tests"]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
 markers = ["integration: requires a disposable PostgreSQL database", "paid: sends an explicit request to xAI"]
